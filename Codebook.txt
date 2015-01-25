@@ -1,0 +1,118 @@
+Codebook for the R script run_analysis
+
+Human Activity Recognition Using Smartphones Dataset
+
+The original dataset can be downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+ 
+run_analysis creates an independent tidy data set with the average of each variable for each activity and each subject using the files x_train.txt, y_train.txt, x_test.txt, y_test.txt, subject_test.txt, subject_train.txt, features.txt and activity_labels.txt. The tidy dataset is called "tidydata.txt".
+
+There are  180 observations of 88 variables. From the README.txt file in the original dataset, there are 30 subjects, each of whom completes six activities, making up 180 observations in the final average of means and standard devations.
+
+The 88 variables in "tidydata.txt" are as follows:
+
+"subject" - Volunteers 1:30 who perform the activity measured
+"activity" - One of six activities
+				- laying
+				- sitting
+				- standing 
+				- walking
+				- walkingdown
+					- Walking downstairs
+				- walkingup
+					- Walking upstairs
+"timebodyaccelerometermeanxaxis" - time domain body acceleration average for the X axis
+"timebodyaccelerometermeanyaxis" - time domain body acceleration average for the Y axis
+"timebodyaccelerometermeanzaxis" -time domain body acceleration average for the Z axis
+"timegravitimeyaccelerometermeanxaxis" - time domain gravity acceleration average for the X axis
+"timegravitimeyaccelerometermeanyaxis" - time domain gravity acceleration average for the Y axis
+"timegravitimeyaccelerometermeanzaxis" - time domain gravity acceleration average for the Z axis
+"timebodyaccelerometerjerkmeanxaxis" - time domain body acceleration jerk average for the X axis
+"timebodyaccelerometerjerkmeanyaxis" - time domain body acceleration jerk average for the Y axis
+"timebodyaccelerometerjerkmeanzaxis" - time domain body acceleration jerk average for the Z axis
+"timebodygyroscopemeanxaxis" - time domain body gyroscope average for the X axis
+"timebodygyroscopemeanyaxis" - time domain body gyroscope average for the Y axis
+"timebodygyroscopemeanzaxis" - time domain body gyroscope average for the Z axis
+"timebodygyroscopejerkmeanxaxis" - time domain body gyroscope jerk average for the X axis
+"timebodygyroscopejerkmeanyaxis" - time domain body gyroscope jerk average for the Y axis
+"timebodygyroscopejerkmeanzaxis" time domain body gyroscope jerk average for the Z axis
+"timebodyaccelerometermagnitudemean" - time domain body acceleration magnitude average
+"timegravitimeyaccelerometermagnitudemean" - time domain gravity acceleration magnitude average 
+"timebodyaccelerometerjerkmagnitudemean" - time domain body acceleration jerk magnitude average 
+"timebodygyroscopemagnitudemean" - time domain body gyroscope magnitude average
+"timebodygyroscopejerkmagnitudemean" - time domain gyroscope jerk magnitude average
+"frequencybodyaccelerometermeanxaxis" - frequency body acceleration average for the X axis
+"frequencybodyaccelerometermeanyaxis" - frequency body acceleration average for the Y axis
+"frequencybodyaccelerometermeanzaxis" - frequency body acceleration average for the Z axis
+"frequencybodyaccelerometermeanfreqxaxis" - frequency body acceleration average frequency for the X axis
+"frequencybodyaccelerometermeanfreqyaxis" - frequency body acceleration average frequency for the Y axis
+"frequencybodyaccelerometermeanfreqzaxis" - frequency body acceleration average frequency for the Z axis
+"frequencybodyaccelerometerjerkmeanxaxis" - frequency body acceleration jerk average for the X axis
+"frequencybodyaccelerometerjerkmeanyaxis" - frequency body acceleration jerk average for the Y axis
+"frequencybodyaccelerometerjerkmeanzaxis" - frequency body acceleration jerk average for the Z axis
+"frequencybodyaccelerometerjerkmeanfreqxaxis" - frequency body acceleration jerk average frequency for the X axis
+"frequencybodyaccelerometerjerkmeanfreqyaxis" - frequency body acceleration jerk average frequency for the X axis
+"frequencybodyaccelerometerjerkmeanfreqzaxis" - frequency body acceleration jerk average frequency for the X axis
+"frequencybodygyroscopemeanxaxis" - frequency body gyroscope average for the X axis
+"frequencybodygyroscopemeanyaxis" - frequency body gyroscope average for the Y axis
+"frequencybodygyroscopemeanzaxis" - frequency body gyroscope average for the Z axis
+"frequencybodygyroscopemeanfreqxaxis" - frequency body gyroscope average frequency for the X axis
+"frequencybodygyroscopemeanfreqyaxis" - frequency body gyroscope average frequency for the Y axis
+"frequencybodygyroscopemeanfreqzaxis" - frequency body gyroscope average frequency for the Z axis
+"frequencybodyaccelerometermagnitudemean" - frequency body acceleration magnitude average
+"frequencybodyaccelerometermagnitudemeanfreq" - frequency body acceleration magnitude average frequency
+"frequencybodyaccelerometerjerkmagnitudemean" - frequency body acceleration jerk magnitude average
+"frequencybodyaccelerometerjerkmagnitudemeanfreq" - frequency body acceleration jerk magnitude average frequency
+"frequencybodygyroscopemagnitudemean" - frequency body gyroscope magnitude average
+"frequencybodygyroscopemagnitudemeanfreq" - frequency body gyroscope magnitude average frequency
+"frequencybodygyroscopejerkmagnitudemean" - frequency body gyroscope jerk magnitude average
+"frequencybodygyroscopejerkmagnitudemeanfreq" - frequency body gyroscope jerk magnitude average frequency
+"angletimebodyaccelerometermeangravitimey" - angle time domain body acceleration average gravity
+"angletimebodyaccelerometerjerkmeangravitimeymean" - angle time domain body acceleration average gravity average
+"angletimebodygyroscopemeangravitimeymean" - angle time domain body gyroscope average gravity average
+"angletimebodygyroscopejerkmeangravitimeymean" - angle time domain body gyroscope jerk average gravity average
+"anglexaxisgravitimeymean" - angle in X axis gravity time domain average
+"angleyaxisgravitimeymean" - angle in Y axis gravity time domain average
+"anglezaxisgravitimeymean" - angle in Z axis gravity time domain average
+"timebodyaccelerometerstimedxaxis" - time domain body acceleration for X axis
+"timebodyaccelerometerstimedyaxis" - time domain body acceleration for Y axis
+"timebodyaccelerometerstimedzaxis" - time domain body acceleration for Z axis
+"timegravitimeyaccelerometerstimedxaxis" - time domain gravity acceleration standard deviation for X axis
+"timegravitimeyaccelerometerstimedyaxis" - time domain gravity acceleration standard deviation for Y axis
+"timegravitimeyaccelerometerstimedzaxis" - time domain gravity acceleration standard deviation for Z axis
+"timebodyaccelerometerjerkstimedxaxis" - time domain acceleration jerk standard deviation for X axis
+"timebodyaccelerometerjerkstimedyaxis" - time domain acceleration jerk standard deviation for Y axis
+"timebodyaccelerometerjerkstimedzaxis" - time domain acceleration jerk standard deviation for Z axis
+"timebodygyroscopestimedxaxis" - time domain body gyroscope standard deviation for X axis
+"timebodygyroscopestimedyaxis" - time domain body gyroscope standard deviation for Y axis
+"timebodygyroscopestimedzaxis" - time domain body gyroscope standard deviation for Z axis
+"timebodygyroscopejerkstimedxaxis" - time domain body gyroscope jerk standard deviation for X axis
+"timebodygyroscopejerkstimedyaxis" - time domain body gyroscope jerk standard deviation for Y axis
+"timebodygyroscopejerkstimedzaxis" - time domain body gyroscope jerk standard deviation for Z axis
+"timebodyaccelerometermagnitudestimed" - time domain body acceleration magnitude standard deviation
+"timegravitimeyaccelerometermagnitudestimed" - time domain gravity acceleration magnitude standard deviation
+"timebodyaccelerometerjerkmagnitudestimed" - time domain acceleration jerk magnitude standard deviation
+"timebodygyroscopemagnitudestimed" - time domain body gyroscope magnitude standard deviation
+"timebodygyroscopejerkmagnitudestimed" - time domain body gyroscope jerk magnitude standard deviation
+"frequencybodyaccelerometerstimedxaxis" - frequency body acceleration standard deviation for X axis
+"frequencybodyaccelerometerstimedyaxis" - frequency body acceleration standard deviation for Y axis
+"frequencybodyaccelerometerstimedzaxis" - frequency body acceleration standard deviation for Z axis
+"frequencybodyaccelerometerjerkstimedxaxis" - frequency body acceleration jerk standard deviation for X axis
+"frequencybodyaccelerometerjerkstimedyaxis" - frequency body acceleration jerk standard deviation for Y axis
+"frequencybodyaccelerometerjerkstimedzaxis" - frequency body acceleration jerk standard deviation for Z axis
+"frequencybodygyroscopestimedxaxis" - frequency body gyroscope standard deviation for the X axis
+"frequencybodygyroscopestimedyaxis" - frequency body gyroscope standard deviation for the Y axis
+"frequencybodygyroscopestimedzaxis" - frequency body gyroscope standard deviation for the Z axis
+"frequencybodyaccelerometermagnitudestimed" - frequency body acceleration magnitude standard deviation 
+"frequencybodyaccelerometerjerkmagnitudestimed" - frequency body acceleration jerk magnitude standard deviation
+"frequencybodygyroscopemagnitudestimed" - frequency body gyroscope magnitude standard deviation
+"frequencybodygyroscopejerkmagnitudestimed" - frequency body gyroscope jerk magnitude standard deviation
+
+From the original README.txt in the dataset:
+"The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions."
